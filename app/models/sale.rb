@@ -7,9 +7,9 @@ class Sale < ApplicationRecord
 
   after_save do
     calc = 0
-    #Soma o preço dos produtos vezes a quantidade deles
+    # Soma o preço dos produtos vezes a quantidade deles
     self.product_quantities.each {|p| calc += p.product.price * p.quantity}
-    #Verifica se existe um desconto e aplica caso exista
+    # Verifica se existe um desconto e aplica caso exista
     if self.discount
       if self.discount.kind == "porcent"
         calc -= calc / self.discount.value
@@ -18,7 +18,7 @@ class Sale < ApplicationRecord
       end
     end
 
-    #Verifica se ja existe uma comissão, caso sim atualiza, caso não cria uma nova
+    # Verifica se já existe uma comissão, caso sim atualiza, caso não cria uma nova.
     if self.comission.present?
       self.comission.update(value: (calc * 0.1), status: :pending)
     else

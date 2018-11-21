@@ -12,5 +12,5 @@ Discount.create name: 'Desconto carnaval', description: 'Aplique esse desconto n
 Discount.create name: 'Desconto carnaval dinheiro', description: 'Aplique esse desconto quando possivel', value: '10', kind: :money, status: :active
 
 #Criando client
-Client.create name: 'emilio', company_name: 'IpanemaBeach', document: '1234', email: 'emilio@imanemabeach.com', user:User.first
-Client.create name: 'eduardo', company_name: 'thebritos', document: '123467', email: 'eduardo@brito.com', user:User.first
+Client.create name: 'emilio', company_name: 'IpanemaBeach', document: '1234', email: 'emilio@imanemabeach.com', user: User.first
+Client.create name: 'eduardo', company_name: 'thebritos', document: '123467', email: 'eduardo@brito.com', user: User.first
